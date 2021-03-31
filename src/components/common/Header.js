@@ -63,6 +63,10 @@ const MobileMenuIcon = styled.div`
     margin: 5px 0;
     width: 100%;
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const Header = () => {
