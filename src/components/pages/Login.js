@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PageLayout, Input } from "components/common";
+import { PageLayout, Input, PasswordInput, Button } from "components/common";
 import styled from "styled-components";
 const Form = styled.form`
   width: 100%;
@@ -10,6 +10,11 @@ const Form = styled.form`
   box-sizing: border-box;
   color: black;
   border-radius: 4px;
+
+  .alt-text {
+    text-align: center;
+    margin: 10px 0;
+  }
 `;
 const Login = () => {
   const [formFields, setFormFields] = useState({ username: "", password: "" });
@@ -29,13 +34,14 @@ const Login = () => {
           type="text"
           placeholder="Username"
         />
-        <Input
+        <PasswordInput
           value={formFields.password}
           onChange={handleInputChange}
           name="password"
-          type="password"
-          placeholder="Password"
         />
+        <Button large>Login</Button>
+        <div className="alt-text">or</div>
+        <Button secondary>Register</Button>
       </Form>
     </PageLayout>
   );
